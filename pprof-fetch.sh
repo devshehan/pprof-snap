@@ -94,7 +94,7 @@ else
   mkdir "$destFilePath"
 fi
 
-imageName="$(date "+%Y%m%d%H%M%S").png"
+imageName="$(date "+%Y%m%d%H%M%S")_$profile.png"
 echo "image name: $imageName"
 
 if go tool pprof -png -output="$destFilePath/$imageName" "http://$ip:6060/debug/pprof/$profile";
