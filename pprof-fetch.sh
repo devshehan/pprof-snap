@@ -97,7 +97,7 @@ fi
 imageName="$(date "+%Y%m%d%H%M%S").png"
 echo "image name: $imageName"
 
-if go tool pprof -png "http://$ip:6060/debug/pprof/$profile" > "$destFilePath/$imageName" >&2;
+if go tool pprof -png -output="$destFilePath/$imageName" "http://$ip:6060/debug/pprof/$profile";
 then
   echo "image saved in $destFilePath/$imageName"
 else
